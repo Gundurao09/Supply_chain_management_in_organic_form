@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>supply chain management</title>
+  </head>
+
+  <body>
+    <header>
+      <h2 class="logo">buyer login</h2>
+      <nav class="navigation">
+        <a href="MAIN1.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">contact</a>
+        <!-- <button class="btnlogin-popup">Login</button> -->
+      </nav>
+    </header>
+    <div id="conatiner">
+      <div id="part1">
+        <div id="form_div">
+          <form action="" id="form">
+            <p>Personal Details</p>
+            <br />
+            <div id="formfirstline">
+              <div>
+                <label for=""><span class="red">*</span>Enter name</label>
+                <br />
+                <input type="name" id="name" placeholder="Name" />
+              </div>
+              <div>
+                <label for=""><span class="red">*</span> Enter the Email</label>
+                <br />
+                <input
+                  type="email"
+                  id="namelast"
+                  placeholder="Example@gmail.com"
+                />
+              </div>
+              <div>
+                <label for=""
+                  ><span class="red">*</span>Enter contact number</label
+                >
+                <br />
+                <input type="number" id="number" placeholder="Number" />
+              </div>
+            </div>
+            <!-- <br /> -->
+            <p>Address Details</p>
+            <br />
+            <div id="formsecondline">
+              <div>
+                <label for=""><span class="red">*</span>COUNTRY</label>
+                <br />
+                <!-- <h2>Select a Country:</h2> -->
+                <select id="countryDropdown">
+                  <option value="">Select a country</option>
+                  <option value="India">India</option>
+                  <option value="USA">USA</option>
+                </select>
+                <div id="output"></div>
+              </div>
+              <div>
+                <label for=""><span class="red">*</span>STATE</label>
+                <br />
+                <select id="stateDropdown"></select>
+
+                <!-- <input type="" id="apartmentname"> -->
+              </div>
+            </div>
+            <div id="formthirdline">
+              <div>
+                <label for=""
+                  ><span class="red">*</span>Enter street details</label
+                >
+                <br />
+                <input type="text" id="streetdetails" placeholder="Street" />
+              </div>
+              <div>
+                <label for=""
+                  ><span class="red">*</span> Enter landmark for easy reach
+                  out</label
+                >
+                <br />
+                <input type="text" id="landmark" placeholder="Landmark" />
+              </div>
+            </div>
+            <div id="formforthline">
+              <div class="">
+                <label for=""><span class="red">*</span>Enter city name</label>
+                <br />
+                <input type="text" id="city" placeholder="City" />
+              </div>
+              <div>
+                <label for=""><span class="red">*</span>Area details</label>
+                <br />
+                <input type="text" id="areadetals" placeholder="Area" />
+              </div>
+              <div>
+                <label for=""><span class="red">*</span> Enter Pincode</label>
+                <br />
+                <input type="text" id="pincode" placeholder="Pincode" />
+              </div>
+            </div>
+
+            <button id="submit">
+              <a href="gread1.html" disabled>submit</a>
+            </button>
+            <!-- <input type="submit" onclick="addressinfo()"> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("k4.jpg");
+    background-size: cover;
+    background-position: center;
+    /* background-color: rgb(43, 23, 223); */
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(240, 255, 255, 0.8);
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+  }
+
+  /* #navbar {
+        width: 75%;
+        margin: auto;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    } */
+
+  .navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: rgb(24, 8, 8);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+  }
+
+  .navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: rgb(24, 8, 8);
+    border-radius: 5px;
+    transform-origin: left;
+    transform: scaleX(0);
+    /* transform: scaleY(0); */
+
+    /* */
+    transition: transform 0.5s;
+    /**/
+  }
+
+  .navigation a:hover:after {
+    transform-origin: right;
+    transform: scaleX(1);
+  }
+
+  .logo {
+    font-size: 2em;
+    color: rgb(24, 8, 8);
+    user-select: none;
+    font-style: italic;
+    text-transform: capitalize;
+  }
+
+  #conatiner {
+    width: 75%;
+
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    font-weight: 45px;
+    justify-content: space-between;
+  }
+
+  #part1 {
+    width: 100%;
+    /* border: 1px solid rgb(216, 67, 67); */
+    box-sizing: border-box;
+    padding: 90px;
+    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
+  }
+
+  /* #part2 {
+        width: 27%;
+
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    } */
+
+  .red {
+    color: rgb(177, 6, 6);
+  }
+
+  #form > p {
+    font-size: 20px;
+    margin-bottom: 0px;
+    font-weight: bold;
+  }
+
+  #formfirstline {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(238, 238, 16);
+  }
+
+  #formfirstline > div {
+    width: 32%;
+  }
+
+  #formfirstline > div > input {
+    width: 100%;
+    border: 0%;
+    border-radius: 7px;
+    height: 25px;
+  }
+
+  #formsecondline {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(238, 238, 16);
+  }
+
+  #formsecondline > div {
+    width: 49%;
+  }
+
+  #formsecondline > div > input {
+    width: 100%;
+    border: 0%;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    height: 25px;
+  }
+
+  #formthirdline {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(249, 249, 10);
+  }
+
+  #formthirdline > div {
+    width: 49%;
+  }
+
+  #formthirdline > div > input {
+    width: 100%;
+    border: 0%;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    height: 25px;
+  }
+
+  #formforthline {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(238, 238, 16);
+  }
+
+  #formforthline > div {
+    width: 32%;
+  }
+
+  #formforthline > div > input {
+    width: 100%;
+    border: 0%;
+  }
+
+  .input-button {
+    margin: 10px;
+    width: 100px;
+    border: 0ch;
+    border: 1px solid greenyellow;
+    border-radius: 5px;
+  }
+
+  #submit {
+    margin: 20px;
+    color: black;
+    border: 1px solid greenyellow;
+    border-radius: 5px;
+    padding: 10px;
+    padding-bottom: 10px;
+    font-size: large;
+    margin-left: 293px;
+  }
+  #submit :hover {
+    background-color: rgb(63, 180, 180);
+    color: black;
+  }
+  #countryDropdown {
+    width: 99%;
+    border-radius: 7px;
+    height: 25px;
+  }
+  #stateDropdown {
+    width: 99%;
+    border-radius: 7px;
+    height: 25px;
+  }
+  #streetdetails {
+    border-radius: 7px;
+    height: 25px;
+  }
+  #city {
+    border-radius: 7px;
+    height: 25px;
+  }
+  #areadetals {
+    border-radius: 7px;
+    height: 25px;
+  }
+  #pincode {
+    border-radius: 7px;
+    height: 25px;
+  }
+</style>
+<script src="style.js"></script>
+<!-- <script>
+  document.getElementById("submit").addEventListener("click", function () {
+    const formData = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("namelast").value,
+      contact: document.getElementById("number").value,
+      country: document.getElementById("countryDropdown").value,
+      state: document.getElementById("stateDropdown").value,
+      street: document.getElementById("streetdetails").value,
+      landmark: document.getElementById("landmark").value,
+      city: document.getElementById("city").value,
+      area: document.getElementById("areadetals").value,
+      pincode: document.getElementById("pincode").value,
+    };
+
+    // Get existing form data from local storage
+    let existingFormData = JSON.parse(localStorage.getItem("formData")) || [];
+
+    // Add new form data to existing data
+    existingFormData.push(formData);
+
+    // Save updated form data to local storage
+    localStorage.setItem("formData", JSON.stringify(existingFormData));
+
+    // Redirect to the table.html page
+    window.location.href = "table.html";
+  });
+</script> -->
+<script>
+  document.getElementById("submit").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the form from submitting by default
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("namelast").value;
+    const contact = document.getElementById("number").value;
+    const country = document.getElementById("countryDropdown").value;
+    const state = document.getElementById("stateDropdown").value;
+    const street = document.getElementById("streetdetails").value;
+    const landmark = document.getElementById("landmark").value;
+    const city = document.getElementById("city").value;
+    const area = document.getElementById("areadetals").value;
+    const pincode = document.getElementById("pincode").value;
+
+    if (
+      name === "" ||
+      email === "" ||
+      contact === "" ||
+      country === "" ||
+      state === "" ||
+      street === "" ||
+      landmark === "" ||
+      city === "" ||
+      area === "" ||
+      pincode === ""
+    ) {
+      alert("Please fill in all details before submitting.");
+    } else {
+      const confirmation = confirm("Are you sure you want to submit the form?");
+      if (confirmation) {
+        const formData = {
+          name,
+          email,
+          contact,
+          country,
+          state,
+          street,
+          landmark,
+          city,
+          area,
+          pincode,
+        };
+
+        // Get existing form data from local storage
+        let existingFormData =
+          JSON.parse(localStorage.getItem("formData")) || [];
+
+        // Add new form data to existing data
+        existingFormData.push(formData);
+
+        // Save updated form data to local storage
+        localStorage.setItem("formData", JSON.stringify(existingFormData));
+
+        // Redirect to the next page
+        window.location.href = "gread1.html";
+      }
+    }
+  });
+</script>

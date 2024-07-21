@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order List</title>
+    <!-- Add your styles or link to a CSS file -->
+    <style>
+      /* Your CSS styles for the order list page */
+      /* ... */
+      body {
+        background-color: rgb(244, 217, 198);
+      }
+
+      .delete-button {
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 align="center">Order List</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table rows will be added dynamically using JavaScript -->
+      </tbody>
+    </table>
+    <script>
+      // Retrieve orders from local storage
+      const orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+      // Function to display orders in the table
+      function displayOrders() {
+        const tbody = document.querySelector("tbody");
+
+        for (const order of orders) {
+          const row = document.createElement("tr");
+
+          const productNameCell = document.createElement("td");
+          productNameCell.textContent = order.productName;
+          row.appendChild(productNameCell);
+
+          const priceCell = document.createElement("td");
+          priceCell.textContent = order.price;
+          row.appendChild(priceCell);
+
+          const descriptionCell = document.createElement("td");
+          descriptionCell.textContent = order.description;
+          row.appendChild(descriptionCell);
+
+          const quantityCell = document.createElement("td");
+          quantityCell.textContent = order.quantity;
+          row.appendChild(quantityCell);
+
+          const actionCell = document.createElement("td");
+          const deleteButton = document.createElement("button");
+          deleteButton.textContent = "Delete";
+          deleteButton.classList.add("delete-button");
+          deleteButton.addEventListener("click", () =>
+            deleteOrder(order.productName)
+          );
+          actionCell.appendChild(deleteButton);
+          row.appendChild(actionCell);
+
+          tbody.appendChild(row);
+        }
+      }
+
+      // Function to delete an order
+      function deleteOrder(productName) {
+        const index = orders.findIndex(
+          (order) => order.productName === productName
+        );
+        if (index !== -1) {
+          orders.splice(index, 1);
+          localStorage.setItem("orders", JSON.stringify(orders));
+          location.reload(); // Refresh the page to update the table
+        }
+      }
+
+      // Call the displayOrders function when the page loads
+      window.onload = displayOrders;
+    </script>
+  </body>
+</html>

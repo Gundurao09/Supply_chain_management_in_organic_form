@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Details</title>
+    <style>
+      /* Add your CSS styling here */
+      /* ... Your existing styles ... */
+      #product-image-details {
+        max-width: 100px; /* Set your desired width */
+        max-height: 100px; /* Set your desired height */
+        /* No need to hide the image initially */
+      }
+      body {
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        margin: 0 500px;
+        background-color: rgb(170, 226, 240);
+      }
+      #price-details {
+        font-size: medium;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+      #confirm-buy-button {
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(24, 8, 8);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 1.1em;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.3s;
+        margin: 30px 0 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="product-name-details"></h2>
+    <img
+      id="product-image-details"
+      src="p1.png"
+      alt="Product Image"
+      width="900px"
+    />
+    <!-- <img
+      id="product-image-details1"
+      src="p2.jpg"
+      alt="Product Image"
+      width="900px"
+    /> -->
+    <p id="price-details"></p>
+    <p id="description-details"></p>
+    <button id="confirm-buy-button">Buy</button>
+
+    <!-- <script>
+      const productNameDetails = document.getElementById(
+        "product-name-details"
+      );
+      const priceDetails = document.getElementById("price-details");
+      const descriptionDetails = document.getElementById("description-details");
+      const productImageDetails = document.getElementById(
+        "product-image-details"
+      );
+      const confirmBuyButton = document.getElementById("confirm-buy-button");
+
+      const queryParams = new URLSearchParams(window.location.search);
+      const productName = queryParams.get("name");
+      const price = queryParams.get("price");
+      const description = queryParams.get("description");
+
+      productNameDetails.textContent = productName;
+      priceDetails.textContent = price;
+      descriptionDetails.textContent = description;
+
+      confirmBuyButton.addEventListener("click", () => {
+        const confirmResponse = confirm(
+          `Do you want to buy ${productName} for ${price}?`
+        );
+        if (confirmResponse) {
+          alert("Thank you for your purchase!");
+          // You can add further logic here for processing the purchase
+          // You can also store the details in a table, similar to the previous example
+        }
+      });
+    </script> -->
+    <!-- Your existing order.html code ... -->
+
+    <!-- <script>
+      const productNameDetails = document.getElementById(
+        "product-name-details"
+      );
+      const priceDetails = document.getElementById("price-details");
+      const descriptionDetails = document.getElementById("description-details");
+      const productImageDetails = document.getElementById(
+        "product-image-details"
+      );
+      const confirmBuyButton = document.getElementById("confirm-buy-button");
+
+      const queryParams = new URLSearchParams(window.location.search);
+      const productName = queryParams.get("name");
+      const price = queryParams.get("price");
+      const description = queryParams.get("description");
+      const quantity = queryParams.get("quantity"); // Retrieve quantity too
+
+      productNameDetails.textContent = productName;
+      priceDetails.textContent = price;
+      descriptionDetails.textContent = description;
+
+      confirmBuyButton.addEventListener("click", () => {
+        const confirmResponse = confirm(
+          `Do you want to buy ${productName} for ${price}?`
+        );
+        if (confirmResponse) {
+          // Store details in local storage (or you can use a database)
+          const order = {
+            productName,
+            price,
+            description,
+            quantity,
+          };
+          let orders = JSON.parse(localStorage.getItem("orders")) || [];
+          orders.push(order);
+          localStorage.setItem("orders", JSON.stringify(orders));
+
+          // Redirect to the order-list.html page
+          window.location.href = "order-list.html";
+        }
+      });
+    </script> -->
+    <!-- Your existing order.html code ... -->
+    <script>
+      const productNameDetails = document.getElementById(
+        "product-name-details"
+      );
+      const priceDetails = document.getElementById("price-details");
+      const descriptionDetails = document.getElementById("description-details");
+      const productImageDetails = document.getElementById(
+        "product-image-details"
+      );
+      const confirmBuyButton = document.getElementById("confirm-buy-button");
+
+      const queryParams = new URLSearchParams(window.location.search);
+      const productName = queryParams.get("name");
+      const price = queryParams.get("price");
+      const description = queryParams.get("description");
+      const quantity = queryParams.get("quantity"); // Retrieve quantity too
+
+      productNameDetails.textContent = productName;
+      priceDetails.textContent = price;
+      descriptionDetails.textContent = description;
+
+      confirmBuyButton.addEventListener("click", () => {
+        const confirmResponse = confirm(
+          `Do you want to buy ${productName} for ${price}?`
+        );
+        if (confirmResponse) {
+          // Store details in local storage (or you can use a database)
+          const order = {
+            productName,
+            price,
+            description,
+            quantity,
+          };
+          let orders = JSON.parse(localStorage.getItem("orders")) || [];
+          orders.push(order);
+          localStorage.setItem("orders", JSON.stringify(orders));
+
+          // Redirect to the order-list.html page
+          window.location.href = "order-list.html";
+          // window.location.href = "order-details.html";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>View Details</title>
+    <script>
+      function openNewWindow(selectedValue) {
+        var url;
+        if (selectedValue === "table.html") {
+          url = "table.html";
+        } else if (selectedValue === "buyer.html") {
+          url = "buyer.html";
+        } else if (selectedValue === "order-details.html") {
+          url = "order-details.html";
+        }
+        if (url) {
+          window.open(url, "_blank");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <label for="selectOption">Select an option:</label>
+    <select id="selectOption" onchange="openNewWindow(this.value);">
+      <option value="" class="order">Select...</option>
+      <option value="table.html">view the buyer details</option>
+      <option value="order-details.html">view buyer oder product</option>
+      <option value="buyer.html">add the item</option>
+    </select>
+  </body>
+</html>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("k3.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  label {
+    font-size: larger;
+    font-style: italic;
+    font-weight: bold;
+    color: aqua;
+  }
+  #selectOption {
+    border-radius: 20px;
+    height: 30px;
+    text-transform: capitalize;
+    font-size: medium;
+    font-style: normal;
+    font-weight: 100;
+  }
+</style>

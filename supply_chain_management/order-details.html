@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order Details</title>
+    <style>
+      /* Your CSS styles for the order details page */
+    </style>
+  </head>
+  <body>
+    <h2 align="center">Order Details</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <a href="order-details.html?orderIndex=0">View Details</a>
+
+        <!-- Table rows will be added dynamically using JavaScript -->
+      </tbody>
+    </table>
+    <style>
+      body {
+        background-color: rgb(243, 204, 243);
+      }
+    </style>
+    <script>
+      const orderIndex = new URLSearchParams(window.location.search).get(
+        "orderIndex"
+      );
+      const orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+      const order = orders[orderIndex];
+      const tbody = document.querySelector("tbody");
+
+      const row = document.createElement("tr");
+
+      const productNameCell = document.createElement("td");
+      productNameCell.textContent = order.productName;
+      row.appendChild(productNameCell);
+
+      const priceCell = document.createElement("td");
+      priceCell.textContent = order.price;
+      row.appendChild(priceCell);
+
+      const descriptionCell = document.createElement("td");
+      descriptionCell.textContent = order.description;
+      row.appendChild(descriptionCell);
+
+      const quantityCell = document.createElement("td");
+      quantityCell.textContent = order.quantity;
+      row.appendChild(quantityCell);
+
+      tbody.appendChild(row);
+    </script>
+  </body>
+</html>

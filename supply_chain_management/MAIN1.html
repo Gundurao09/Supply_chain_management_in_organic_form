@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="s4.png" type="image/x-icon" />
+    <title>supply chain management</title>
+    <script>
+      function openNewWindow(selectedValue) {
+        var url;
+        if (selectedValue === "index.html") {
+          url = "index.html";
+        } else if (selectedValue === "buyer.html") {
+          url = "buyer.html";
+        }
+
+        if (url) {
+          window.open(url, "_blank");
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+
+  <body>
+    <header>
+      <h2 class="logo">supply chain management</h2>
+      <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="contact.html">contact</a>
+      </nav>
+      <div id="size">
+        <select herf="#" class="login" onchange="openNewWindow(this.value);">
+          <option value="">Login</option>
+          <option value="index.html">Seller</option>
+          <option value="buyer.html">buyer</option>
+        </select>
+      </div>
+    </header>
+    <!-- <pre class="logo1">
+     <h2 >supply chain manegement</h2> 
+    </pre> -->
+  </body>
+</html>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("k1.png.jpg");
+    background-size: cover;
+    background-position: center;
+    /* background-color: rgb(43, 23, 223); */
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 110px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    text-transform: capitalize;
+  }
+
+  .logo {
+    font-size: 28px;
+    color: rgb(24, 8, 8);
+    user-select: none;
+    margin-right: 80px;
+    font-style: italic;
+  }
+
+  #size {
+    margin-left: 20px;
+  }
+
+  /* .size1 a { */
+  /* text-align: center; */
+  /* text-transform: capitalize; */
+  /* color: black;
+        font-size: bo; */
+  /* } */
+
+  /* .logo1 {
+        /* font-size: 50px; */
+  /* background: url("photo1.jpg") no-repeat; */
+
+  /* } */
+
+  .login {
+    position: relative;
+    font-size: 1.1em;
+    color: rgb(24, 8, 8);
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 0px;
+    background: none;
+    border: none;
+  }
+
+  .combo {
+    color: white;
+    /* display: none; */
+    /* display: flex; */
+    /* background-position-y: 10px; */
+  }
+
+  .login::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: rgb(24, 8, 8);
+    border-radius: 5px;
+    transform-origin: left;
+    transform: scaleX(0);
+
+    /* */
+    transition: transform 0.5s;
+  }
+
+  .login:hover:after {
+    transform-origin: right;
+    transform: scaleX(1);
+  }
+
+  .navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: rgb(24, 8, 8);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+  }
+
+  .navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: rgb(24, 8, 8);
+    border-radius: 5px;
+    transform-origin: left;
+    transform: scaleX(0);
+    /* transform: scaleY(0); */
+
+    /* */
+    transition: transform 0.5s;
+    /**/
+  }
+</style>
+<!-- <script>
+    // Get the button and the chombo boa element by their IDs
+    const showButton = document.getElementById('showButton');
+    const chomboBoa = document.querySelector('.chombo-boa');
+
+    // Add a click event listener to the button
+    showButton.addEventListener('click', () => {
+        // Change the display property of the chombo boa element to "block" to show it
+        chomboBoa.style.display = 'block';
+    });
+
+</script> -->

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product List</title>
+    <style>
+      .product-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .product-item {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .product-image {
+        max-width: 100px;
+        margin-right: 10px;
+      }
+
+      .product-details {
+        flex: 1;
+      }
+
+      .buy-button {
+        background-color: #007bff;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="product-list">
+      <li class="product-item">
+        <img src="p1.png" alt="Product 1" class="product-image" />
+        <div class="product-details">
+          <h2>Rice Water</h2>
+          <p>Price: ₹20.00</p>
+          <p>
+            The water that is left behind after rice has been cooked, makes an
+            easy organic fertilizer for your plants.<br />
+            It contains starch and small amounts of NPK. <br />Which are
+            Nitrogen, Phosphorus, and Potassium. These are all essential for
+            plant health and growth.
+          </p>
+          <button class="buy-button">view</button>
+        </div>
+      </li>
+      <li class="product-item">
+        <img src="p2.jpg" alt="Product 1" class="product-image" />
+        <div class="product-details">
+          <h2>Coffee Grounds</h2>
+          <p>Price: ₹25.00</p>
+          <p>
+            Used coffee grounds are great for the garden and can add a boost of
+            nutrition to your plants, whilst building healthy soil. Used coffee
+            grounds ( filtered through water) are nearly pH neutral. They are
+            rich in Nitrogen and Potassium which are both essential nutrients.
+            Although they are brown in colour, they are rich in Nitrogen so
+            coffee grounds are classed as “green” when you are composting.
+          </p>
+          <button class="buy-button">view</button>
+        </div>
+      </li>
+      <li class="product-item">
+        <img src="p3.jpg" alt="Product 1" class="product-image" />
+        <div class="product-details">
+          <h2>Liquid Seaweed</h2>
+          <p>Price: ₹100.00</p>
+          <p>
+            If you can source seaweed, ferment it in a bucket of water for a week or more, and brew up your own organic fertilizer. Once the water is a dark colour, it will definitely have a strong smelly pong to it! Strain off the liquid and dilute it with more water. 
+          </p>
+          <button class="buy-button">view</button>
+        </div>
+      </li>
+      <li class="product-item">
+        <img src="p4.jpeg" alt="Product 1" class="product-image" />
+        <div class="product-details">
+          <h2>Product 1</h2>
+          <p>Price: ₹200.00</p>
+          <p>
+         Comfrey has deep roots that go deep down and draw up all the good nutrients. It produces lots of big lush leaves which can add great plant matter, nutrients and fibre to your soils. Sandy or clay-rich soils need lots of fibre added to either help retain moisture (sandy soils) or break up the soil and allow better drainage (clay-rich soils). Here in Perth, my soils are super sandy. 
+          </p>
+          <button class="buy-button">view</button>
+        </div>
+      </li>
+    <!-- <script>
+      const buyButtons = document.querySelectorAll(".buy-button");
+
+      buyButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const productItem = button.closest(".product-item");
+          const productName = productItem.querySelector("h2").textContent;
+          const price = productItem.querySelector("p:nth-child(2)").textContent;
+          const description =
+            productItem.querySelector("p:nth-child(3)").textContent;
+
+          // Open the new page and pass data as query parameters
+          window.location.href = `oder.html?name=${encodeURIComponent(
+            productName
+          )}&price=${encodeURIComponent(
+            price
+          )}&description=${encodeURIComponent(description)}`;
+        });
+      });
+    </script> -->
+    <!-- Modify the script section at the end of your HTML -->
+<script>
+  const buyButtons = document.querySelectorAll(".buy-button");
+
+  buyButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const productItem = button.closest(".product-item");
+      const productName = productItem.querySelector("h2").textContent;
+      const price = parseFloat(
+        productItem.querySelector("p:nth-child(2)").textContent.replace("Price: ₹", "")
+      );
+      const description = productItem.querySelector("p:nth-child(3)").textContent;
+
+      // Get the existing quantity from local storage or set to 1 by default
+      const existingQuantity = parseInt(localStorage.getItem(productName)) || 1;
+
+      // Open the new page and pass data as query parameters
+      window.location.href = `oder.html?name=${encodeURIComponent(
+        productName
+      )}&price=${encodeURIComponent(
+        price.toFixed(2) // Limit price to two decimal places
+      )}&description=${encodeURIComponent(
+        description
+      )}&quantity=${encodeURIComponent(existingQuantity)}`;
+    });
+  });
+</script> 
+<!-- Your existing product-list.html code ... -->
+  </body>
+</html>
